@@ -18,50 +18,50 @@ const createProxyMiddleware = require('http-proxy-middleware');
 
 //module.exports = function(app){
     
-  app.use( 
-    createProxyMiddleware('/apw',  {
-        target: 'http://api.openweathermap.org/',
-        changeOrigin: true,
-        pathRewrite:{ '^/apw/':'/' }
-    }),
-    createProxyMiddleware('/api', {
-      target: 'https://openapi.naver.com/',
-      changeOrigin: true,
-      pathRewrite:{ '^/api/':'/' }
-    }),
+//   app.use( 
+//     createProxyMiddleware('/apw',  {
+//         target: 'http://api.openweathermap.org/',
+//         changeOrigin: true,
+//         pathRewrite:{ '^/apw/':'/' }
+//     }),
+//     createProxyMiddleware('/api', {
+//       target: 'https://openapi.naver.com/',
+//       changeOrigin: true,
+//       pathRewrite:{ '^/api/':'/' }
+//     }),
 
-    // https://yts.mx/api/v2/list_movies.json?sort_by=like_count&order_by=desc&limit=5
-    createProxyMiddleware('/movies', {
-      target: 'https://yts.mx/',
-      changeOrigin: true,
-      pathRewrite:{ '^/movies':'/api/v2/list_movies.json' },
-      router: {
-      //   // when request.headers.host == 'localhost:4000',
-      //   // override target 'http://localhost:4000' to 'https://movie-app-2021.herokuapp.com'
-        // 'localhost:4000': 'https://movie-app-2021.herokuapp.com/yts',
-      },
-    }),
-    createProxyMiddleware('/likes', {
-      target: 'https://yts.mx/',
-      changeOrigin: true,
-      pathRewrite:{ '^/likes':'/api/v2/movie_details.json' },
-      router: {
-      //   // when request.headers.host == 'localhost:4000',
-      //   // override target 'http://localhost:4000' to 'https://movie-app-2021.herokuapp.com'
-        // 'localhost:4000': 'https://movie-app-2021.herokuapp.com/yts',
-      },
-    }),
-    createProxyMiddleware('/img-yts', {
-      target: 'https://img.yts.mx/',
-      changeOrigin: true,
-      pathRewrite:{ '^/img-yts/':'/' },
-      router: {
-        // when request.headers.host == 'localhost:4000',
-        // override target 'http://localhost:4000' to 'https://movie-app-2021.herokuapp.com'
-        'localhost:4000': 'https://movie-app-2021.herokuapp.com/img-yts',
-      }
-    })
-);
+//     // https://yts.mx/api/v2/list_movies.json?sort_by=like_count&order_by=desc&limit=5
+//     createProxyMiddleware('/movies', {
+//       target: 'https://yts.mx/',
+//       changeOrigin: true,
+//       pathRewrite:{ '^/movies':'/api/v2/list_movies.json' },
+//       router: {
+//       //   // when request.headers.host == 'localhost:4000',
+//       //   // override target 'http://localhost:4000' to 'https://movie-app-2021.herokuapp.com'
+//         // 'localhost:4000': 'https://movie-app-2021.herokuapp.com/yts',
+//       },
+//     }),
+//     createProxyMiddleware('/likes', {
+//       target: 'https://yts.mx/',
+//       changeOrigin: true,
+//       pathRewrite:{ '^/likes':'/api/v2/movie_details.json' },
+//       router: {
+//       //   // when request.headers.host == 'localhost:4000',
+//       //   // override target 'http://localhost:4000' to 'https://movie-app-2021.herokuapp.com'
+//         // 'localhost:4000': 'https://movie-app-2021.herokuapp.com/yts',
+//       },
+//     }),
+//     createProxyMiddleware('/img-yts', {
+//       target: 'https://img.yts.mx/',
+//       changeOrigin: true,
+//       pathRewrite:{ '^/img-yts/':'/' },
+//       router: {
+//         // when request.headers.host == 'localhost:4000',
+//         // override target 'http://localhost:4000' to 'https://movie-app-2021.herokuapp.com'
+//         'localhost:4000': 'https://movie-app-2021.herokuapp.com/img-yts',
+//       }
+//     })
+// );
 
 // app.use('/movies', 
 //   createProxyMiddleware({
